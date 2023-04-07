@@ -1,6 +1,6 @@
 const express = require('express');
-const moment = require('moment');
-const ejs = require('ejs');
+const moment = require('moment'); //새로운 개념
+const ejs = require('ejs');  //새로운 개념 
 const path = require('path');
 
 const app = express();
