@@ -7,10 +7,10 @@
   <title>Document</title>
   <style>
     .go {
-  color: green;
+  color: plum;
 }
 .stop {
-  color: red;
+  color: yellowgreen;
 }
   </style>
 </head>
@@ -28,20 +28,19 @@ function changeColor() {
   // 간격이 이미 설정되어 있는지 확인한다
   if (!nIntervId) {
     nIntervId = setInterval(flashText, 1000);
-  }
+  }  // 1초마다 텍스트가 .go .stop .go 반복 
 }
 
 function flashText() {
   const oElem = document.getElementById("my_box");
   oElem.className = oElem.className === "go" ? "stop" : "go";
-}
+} //텍스트가 바뀌도록 설정 
 
 function stopTextColor() {
   clearInterval(nIntervId);
   // 변수에서 intervalID를 해체한다.
   nIntervId = null;
 }
-
 document.getElementById("start").addEventListener("click", changeColor);
 document.getElementById("stop").addEventListener("click", stopTextColor);
 
