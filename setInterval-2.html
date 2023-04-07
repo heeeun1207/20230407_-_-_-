@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .go {
+  color: green;
+}
+.stop {
+  color: red;
+}
+  </style>
+</head>
+<body>
+  <div id="my_box">
+    <h3>Hello World</h3>
+  </div>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <script>
+    // intervalID를 저장할 변수이다. 
+let nIntervId;
+
+function changeColor() {
+  // 간격이 이미 설정되어 있는지 확인한다
+  if (!nIntervId) {
+    nIntervId = setInterval(flashText, 1000);
+  }
+}
+
+function flashText() {
+  const oElem = document.getElementById("my_box");
+  oElem.className = oElem.className === "go" ? "stop" : "go";
+}
+
+function stopTextColor() {
+  clearInterval(nIntervId);
+  // 변수에서 intervalID를 해체한다.
+  nIntervId = null;
+}
+
+document.getElementById("start").addEventListener("click", changeColor);
+document.getElementById("stop").addEventListener("click", stopTextColor);
+
+  </script>
+  
+</body>
+</html>
