@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clock</title>
+  <style>
+    body {
+      font-size: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    span {
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span><%= data.year %></span>
+    <span><%= data.month %></span>
+    <span><%= data.date %></span>
+    <span><%= data.hour %></span>
+    <span><%= data.minute %></span>
+    <span><%= data.second %></span>
+    <span><%= data.weekday %></span>
+  </div>
+</body>
+</html>
+
